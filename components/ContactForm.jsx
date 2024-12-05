@@ -11,10 +11,11 @@ const ContactForm = () => {
     firstName: Yup.string().required("First Name is required"),
     lastName: Yup.string().required("Last Name is required"),
     // email: Yup.string().email("Invalid email").required("Email is required"),
-    constituency: Yup.string().email("Invalid email").required("constituency is required"),
-    Village: Yup.string().required("Village is required"),
+    // constituency: Yup.string().required("Constituency is required"),
+    village: Yup.string().required("Village is required"),
     // subject: Yup.string().required("Subject is required"),
-    message: Yup.string().required("Message is required"),
+    // message: Yup.string().required("Message is required"),
+    contact: Yup.string().matches(/^[0-9]{10}$/, "Contact Number must be exactly 10 digits"),
   });
 
   const formik = useFormik({
@@ -22,8 +23,9 @@ const ContactForm = () => {
       firstName: "",
       lastName: "",
       constituency: "",
-      Village: "",
-      message: "",
+      village: "",
+      // message: "",
+      contact: "",
     },
     validationSchema: validationSchema,
     onSubmit: async (values, { setSubmitting,resetForm }) => {
@@ -101,26 +103,54 @@ const ContactForm = () => {
         <div className="w-full px-3">
           <label
             className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            htmlFor="grid-email"
+            htmlFor="grid-constituency"
           >
             CONSTITUENCY
           </label>
           <input
             className={`appearance-none block w-full bg-white text-gray-700 border ${
-              formik.errors.email && formik.touched.email
+              formik.errors.constituency && formik.touched.constituency
                 ? "border-red-500"
                 : "border-gray-200"
             } rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500`}
-            id="grid-email"
-            type="email"
-            name="email"
+            id="grid-constituency"
+            type="text"
+            name="constituency"
             value={formik.values.email}
+            onChange={formik.handleChange}
+            // onBlur={formik.handleBlur}
+          />
+          {/* {formik.touched.email && formik.errors.email && (
+            <p className="text-red-500 text-xs italic">
+              {formik.errors.email}
+            </p>
+          )} */}
+        </div>
+      </div>
+      <div className="flex flex-wrap -mx-3 mb-6">
+        <div className="w-full px-3">
+          <label
+            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            htmlFor="grid-village"
+          >
+            VILLAGE
+          </label>
+          <input
+            className={`appearance-none block w-full bg-white text-gray-700 border ${
+              formik.errors.village && formik.touched.village
+                ? "border-red-500"
+                : "border-gray-200"
+            } rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500`}
+            id="grid-village"
+            type="text"
+            name="village"
+            value={formik.values.village}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           />
-          {formik.touched.email && formik.errors.email && (
+          {formik.touched.village && formik.errors.village && (
             <p className="text-red-500 text-xs italic">
-              {formik.errors.email}
+              {formik.errors.village}
             </p>
           )}
         </div>
@@ -129,31 +159,32 @@ const ContactForm = () => {
         <div className="w-full px-3">
           <label
             className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            htmlFor="grid-subject"
+            htmlFor="grid-contact"
           >
-            VILLAGE
+            CONTACT
           </label>
           <input
             className={`appearance-none block w-full bg-white text-gray-700 border ${
-              formik.errors.subject && formik.touched.subject
+              formik.errors.contact && formik.touched.contact
                 ? "border-red-500"
                 : "border-gray-200"
             } rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500`}
-            id="grid-subject"
+            id="grid-contact"
             type="text"
-            name="subject"
-            value={formik.values.subject}
+            name="contact"
+            value={formik.values.contact}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           />
-          {formik.touched.subject && formik.errors.subject && (
+          {formik.touched.contact && formik.errors.contact && (
             <p className="text-red-500 text-xs italic">
-              {formik.errors.subject}
+              {formik.errors.contact}
             </p>
           )}
         </div>
       </div>
-      <div className="flex flex-wrap -mx-3 mb-6">
+     
+      {/* <div className="flex flex-wrap -mx-3 mb-6">
         <div className="w-full px-3">
           <label
             className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -181,7 +212,7 @@ const ContactForm = () => {
             Make it as long and as crazy as you&apos;d like
           </p>)}
         </div>
-      </div>
+      </div> */}
       <button
         type="submit"
         className="bg-violet-800 hover:bg-violet-600 text-white font-bold py-2 px-4 border-b-4 border-violet-600 hover:border-violet-600 rounded"
