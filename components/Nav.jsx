@@ -47,7 +47,7 @@ const Nav = () => {
           />
           <Link
             href="/"
-            className="text-white tracking-widest font-playfair text-base md:text-xl lg:text-[1.5rem] xl:text-4xl"
+            className="text-white tracking-widest font-playfair text-base md:text-xl lg:text-[1.5rem] xl:text-xl"
           >
             VOICE OF THE PEOPLE PARTY
           </Link>
@@ -98,14 +98,30 @@ const Nav = () => {
             >
               Download
             </Link>
-
+          
             <Link
-              href="/contact"
+              href="/photo"
               className="text-white font-grotesque text-lg tracking-widest"
             >
+              Photo Gallery
+           
+            </Link>
+            <Link
+              href="/contact"
+              className="text-white font-grotesque text-lg tracking-widest" >
               Join
             </Link>
           </div>
+          <Link
+            href="/scheme"
+            className="text-white font-grotesque text-lg tracking-widest border border-solid w-24 h-9 text-center"
+          >
+            Schemes
+          </Link>
+
+
+
+
 
           <Link
             href="/login"
@@ -164,6 +180,10 @@ const Nav = () => {
                 Home
               </Link>
 
+              <Link href="/photo" className="text-white self-center">
+                Photo Gallery
+              </Link>
+
               <Link href="/contact" className="text-white self-center">
                 Join
               </Link>
@@ -171,6 +191,18 @@ const Nav = () => {
               <Link href="/download" className="text-white self-center">
                 Download
               </Link>
+             
+              <Link
+                href="/scheme"
+                className="text-white self-center text-center border border-solid p-2"
+                style={{ width: "90vw" }}
+                onClick={toggleMobileMenu}
+              >
+                Schemes
+              </Link>
+
+
+
 
               <Link
                 href="/login"

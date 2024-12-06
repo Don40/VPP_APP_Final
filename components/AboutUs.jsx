@@ -56,7 +56,7 @@ const AboutUs = () => {
                   <img
                     src={member.image}
                     alt={`${member.name}`}
-                    className="w-24 h-24 rounded-full mb-4"
+                    className="w-24 h-24 rounded-full mb-3"
                   />
                   <h3 className="text-lg font-bold text-gray-800">{member.name}</h3>
                   <p className="text-gray-600">{member.role}</p>

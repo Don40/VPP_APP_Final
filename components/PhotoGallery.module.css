@@ -1,0 +1,66 @@
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    padding: 20px;
+  }
+  
+  .photoContainer {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .photo:hover {
+    transform: scale(1.05);
+  }
+  
+
+  /* Scheme CSS */
+  /* Center the container */
+.underConstruction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  text-align: center;
+}
+
+/* Responsive image with dancing animation */
+.constructionImage {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  animation: dance 1.5s infinite ease-in-out; /* Add animation */
+}
+
+/* Keyframes for the dance effect */
+@keyframes dance {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg); /* Default position */
+  }
+  25% {
+    transform: translateY(-10px) rotate(-10deg); /* Move up and rotate left */
+  }
+  50% {
+    transform: translateY(0) rotate(10deg); /* Return to center and rotate right */
+  }
+  75% {
+    transform: translateY(-10px) rotate(-10deg); /* Move up and rotate left */
+  }
+}
+
+/* Style the message text */
+.message {
+  font-size: 1.5rem;
+  color: #d9cccc;
+  margin-top: 20px;
+}

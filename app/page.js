@@ -36,8 +36,8 @@ const Home = () => {
         all the people who are concerned about the well being of the state. It is therefore the duty and responsibility of
         every right thinking person to support this effort to bring a real and complete change in our state. 
         Therefore, no matter what comes in our way, our commitment to the cause will not be weakened.`}
-        textStyle={{ fontSize: "1.6rem" }} // Example of inline style for text size
-        paragraphStyle={{ fontSize: "1rem" }} // Example of inline style for paragraph size
+        textStyle={{ fontSize: "1.5rem" }} // Example of inline style for text size
+        paragraphStyle={{ fontSize: "1rem", textAlign: "justify" }} // Example of inline style for paragraph size
       />
       
       <AboutUs />

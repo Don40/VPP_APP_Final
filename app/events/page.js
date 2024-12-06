@@ -9,7 +9,7 @@ const Page = () => {
 
     useEffect(() => {
         axios
-            .get("http://localhost:8080/roles")
+            .get("http://localhost:8080/helloworld")
             .then(function (response) {
                 console.log(response.data);
             });

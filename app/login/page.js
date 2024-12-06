@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import axios from "axios";
 import { signIn } from "@/services/AuthService";
+import SecondaryHero from "@/components/SecondaryHero";
 
 
 const Page = () => {
@@ -43,8 +44,10 @@ const Page = () => {
             [name]: value
         }));
     };
-
+<SecondaryHero />
     return (
+
+        
         <div
             className="relative w-full bg-cover bg-center"
             style={{
@@ -53,7 +56,7 @@ const Page = () => {
             }}
         >
             <div className="flex items-center justify-center h-screen">
-                <div className="bg-black bg-opacity-90 rounded-lg overflow-hidden w-72">
+                <div className="bg-black bg-opacity-70 rounded-lg overflow-hidden w-72 mt-10">
                     <div className="p-8">
                         <h2 className="text-3xl font-semibold text-white mb-4">Sign In</h2>
                         <form onSubmit={handleSignIn}>
