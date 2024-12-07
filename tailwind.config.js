@@ -8,10 +8,9 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        move: "moveBg 20s linear infinite", // Custom animation for background movement
-        moveDesktop: "moveBgDesktop 30s linear infinite", // For desktop
-        moveBg: "moveBg 20s linear infinite", // Animation class
+        move: "moveBg 10s linear infinite", // Background movement
         blink: "blink 1.5s infinite", // Blink animation
+        dance: "dance 1s infinite ease-in-out", // Dance animation
       },
       keyframes: {
         moveBg: {
@@ -26,6 +25,12 @@ module.exports = {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.5" },
         },
+        dance: {
+          "0%, 100%": { transform: "translateY(0) rotate(0deg) scale(1)" },
+          "25%": { transform: "translateY(-10px) rotate(-5deg) scale(1.1)" },
+          "50%": { transform: "translateY(0) rotate(5deg) scale(0.9)" },
+          "75%": { transform: "translateY(10px) rotate(-5deg) scale(1.05)" },
+        },
       },
       colors: {
         navbarBgColor: "#092e9c",
@@ -34,7 +39,7 @@ module.exports = {
         raleway: ["var(--font-raleway)"],
         montserrat: ["var(--font-montserrat)"],
         grotesque: ["var(--font-darker-grotesque)"],
-        playfair:["var(--font-playfair-display)"],
+        playfair: ["var(--font-playfair-display)"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

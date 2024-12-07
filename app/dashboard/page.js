@@ -5,7 +5,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import MainContent from "@/components/MainContent";
 import Sidebar from "@/components/Sidebar";
-import PrayerRequests from "@/components/PrayerRequests";
+// import PrayerRequests from "@/components/PrayerRequests";
 import Notifications from "@/components/Notifications";
 import Services from "@/components/Services";
 import Events from "@/components/Events";
@@ -24,8 +24,8 @@ const Dashboard = () => {
 
     const renderContent = () => {
         switch (activeContent) {
-            case 'prayer':
-                return <PrayerRequests />;
+            // case 'prayer':
+            //     return <PrayerRequests />;
             case 'notifications':
                 return <Notifications />;
             case 'services':

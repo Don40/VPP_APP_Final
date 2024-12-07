@@ -22,7 +22,7 @@ const Home = () => {
       <Banner 
         message="JOIN VPP TO ENSURE CHANGE!!!" 
         bgColor="bg-yellow-500"
-        textColor="text-black"
+        textColor="text-white font-playfair"
         icon={<FaExclamationCircle />}
       />
       <Nav />

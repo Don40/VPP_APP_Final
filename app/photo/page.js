@@ -21,7 +21,7 @@ const page = () => {
 
    <Nav />
    <div>
-      <h1 className="text-center text-3xl font-bold mb-4 font-raleway mt-8 text-white">Photo Gallery</h1>
+      <h1 className="text-center text-3xl font-bold mb-4 font-playfair mt-8 text-white">Photo Gallery</h1>
       <PhotoGallery photos={photos} />
     </div>
 
