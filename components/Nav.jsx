@@ -110,6 +110,11 @@ const Nav = () => {
               className="text-white font-grotesque text-lg tracking-widest" >
               Join
             </Link>
+            <Link
+              href="/infogram"
+              className="text-white font-grotesque text-lg tracking-widest" >
+              Infogram
+            </Link>
           </div>
           <Link
             href="/scheme"
@@ -217,6 +222,10 @@ const Nav = () => {
 
               <Link href="/contact" className="text-white self-center">
                 Join
+              </Link>
+              
+              <Link href="/infogram" className="text-white self-center">
+              Infogram
               </Link>
 
               <Link href="/download" className="text-white self-center">
