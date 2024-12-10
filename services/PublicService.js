@@ -12,3 +12,7 @@ export const notifyMe = (values) => {
 export const connectMe = (values) => {
     return axios.post(`${REST_API_BASE_URL}/connect`, values)
 }
+
+export const joinVpp = (values) => {
+    return axios.post(`${REST_API_BASE_URL}/join-vpp`, values)
+}

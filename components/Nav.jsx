@@ -89,7 +89,7 @@ const Nav = () => {
               className="text-white font-grotesque text-lg tracking-widest"
             >
               Home
-            </Link>
+            </Link>     
 
             <Link
               href="/download"
@@ -115,18 +115,13 @@ const Nav = () => {
               className="text-white font-grotesque text-lg tracking-widest" >
               Infogram
             </Link>
-          </div>
+          
           <Link
-            href="/scheme"
-            className="text-white font-grotesque text-lg tracking-widest border border-solid w-24 h-9 text-center"
-          >
-            Schemes
-          </Link>
-
-
-
-
-
+              href="/scheme"
+              className="text-white font-grotesque text-lg tracking-widest" >
+              Schemes
+            </Link>
+</div>
           <Link
             href="/login"
             className="text-white font-grotesque text-lg tracking-widest border border-solid w-24 h-9 text-center"

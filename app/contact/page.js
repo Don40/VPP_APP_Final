@@ -8,7 +8,7 @@ import SecondaryHero from '@/components/SecondaryHero';
 const Page = () => {
     const markerPosition = [25.589413663131815, 91.87529363647245];
     useEffect(() => {
-        fetch('/api/contact')
+        fetch('api/contact')
             .then((response) => response.json())
             .then((data) => setMessage(data.message))
             .catch((error) => console.error('Error fetching data:', error));
