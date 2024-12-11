@@ -4,7 +4,7 @@ const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
     database: 'ctc',
-    password: '',
+    password: 'dada',
     port:5432,
     // port: 8080, // PostgreSQL default port
 });
