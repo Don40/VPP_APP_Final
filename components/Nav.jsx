@@ -228,16 +228,9 @@ const Nav = () => {
               </Link>
              
               <Link
-                href="/scheme"
-                className="text-white self-center text-center border border-solid p-2"
-                style={{ width: "90vw" }}
-                onClick={toggleMobileMenu}
-              >
+                href="/scheme"  className="text-white self-center">
                 Schemes
               </Link>
-
-
-
 
               <Link
                 href="/login"
