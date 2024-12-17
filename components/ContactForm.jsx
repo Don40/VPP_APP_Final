@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import Alert from "./Alert";
-import { joinVpp } from "@/services/PublicService";
+import Alert from "./Alert"; // Assuming you have an Alert component
+import axios from "axios";
 
 const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  // Validation Schema using Yup
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required("First Name is required"),
     lastName: Yup.string().required("Last Name is required"),
+    constituency: Yup.string().required("Constituency is required"),
     village: Yup.string().required("Village is required"),
     contact: Yup.string()
       .matches(/^[0-9]{10}$/, "Contact Number must be exactly 10 digits")
       .required("Contact is required"),
   });
 
+  // Formik setup
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -27,7 +30,7 @@ const ContactForm = () => {
     validationSchema,
     onSubmit: async (values, { setSubmitting, resetForm }) => {
       try {
-        const response = await joinVpp(values);
+        const response = await axios.post("/api/contact", values); // Send data to API
         console.log(response.data);
         setIsSubmitted(true); // Show success alert
         resetForm(); // Reset the form fields
@@ -42,12 +45,12 @@ const ContactForm = () => {
     <div>
       {isSubmitted && <Alert onClose={() => setIsSubmitted(false)} />} {/* Conditionally render Alert */}
       <form className="w-full" onSubmit={formik.handleSubmit}>
+        {/* First Name */}
         <div className="flex flex-wrap -mx-3 mb-6">
-          {/* First Name Field */}
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-first-name"
+              htmlFor="firstName"
             >
               First Name
             </label>
@@ -57,7 +60,7 @@ const ContactForm = () => {
                   ? "border-red-500"
                   : "border-gray-200"
               } rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
-              id="grid-first-name"
+              id="firstName"
               type="text"
               name="firstName"
               value={formik.values.firstName}
@@ -71,11 +74,11 @@ const ContactForm = () => {
             )}
           </div>
 
-          {/* Last Name Field */}
+          {/* Last Name */}
           <div className="w-full md:w-1/2 px-3">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-last-name"
+              htmlFor="lastName"
             >
               Last Name
             </label>
@@ -84,8 +87,8 @@ const ContactForm = () => {
                 formik.errors.lastName && formik.touched.lastName
                   ? "border-red-500"
                   : "border-gray-200"
-              } rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500`}
-              id="grid-last-name"
+              } rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white`}
+              id="lastName"
               type="text"
               name="lastName"
               value={formik.values.lastName}
@@ -100,12 +103,12 @@ const ContactForm = () => {
           </div>
         </div>
 
+        {/* Constituency */}
         <div className="flex flex-wrap -mx-3 mb-6">
-          {/* Constituency Field */}
           <div className="w-full px-3">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-constituency"
+              htmlFor="constituency"
             >
               Constituency
             </label>
@@ -115,21 +118,26 @@ const ContactForm = () => {
                   ? "border-red-500"
                   : "border-gray-200"
               } rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
-              id="grid-constituency"
+              id="constituency"
               type="text"
               name="constituency"
               value={formik.values.constituency}
               onChange={formik.handleChange}
             />
+            {formik.touched.constituency && formik.errors.constituency && (
+              <p className="text-red-500 text-xs italic">
+                {formik.errors.constituency}
+              </p>
+            )}
           </div>
         </div>
 
+        {/* Village */}
         <div className="flex flex-wrap -mx-3 mb-6">
-          {/* Village Field */}
           <div className="w-full px-3">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-village"
+              htmlFor="village"
             >
               Village
             </label>
@@ -139,7 +147,7 @@ const ContactForm = () => {
                   ? "border-red-500"
                   : "border-gray-200"
               } rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
-              id="grid-village"
+              id="village"
               type="text"
               name="village"
               value={formik.values.village}
@@ -154,12 +162,12 @@ const ContactForm = () => {
           </div>
         </div>
 
+        {/* Contact */}
         <div className="flex flex-wrap -mx-3 mb-6">
-          {/* Contact Field */}
           <div className="w-full px-3">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-contact"
+              htmlFor="contact"
             >
               Contact
             </label>
@@ -169,7 +177,7 @@ const ContactForm = () => {
                   ? "border-red-500"
                   : "border-gray-200"
               } rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
-              id="grid-contact"
+              id="contact"
               type="text"
               name="contact"
               value={formik.values.contact}
@@ -184,6 +192,7 @@ const ContactForm = () => {
           </div>
         </div>
 
+        {/* Submit Button */}
         <button
           type="submit"
           className="bg-violet-800 hover:bg-violet-600 text-white font-bold py-2 px-4 border-b-4 border-violet-600 hover:border-violet-600 rounded"
