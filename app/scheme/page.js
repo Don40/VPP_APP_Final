@@ -1,6 +1,6 @@
 "use client";
-import Scheme from '@/components/Scheme';
-import Nav from '@/components/Nav';
+import Scheme from '../../components/Scheme';
+import Nav from '../../components/Nav';
 import React from "react";
 
 
