@@ -1,0 +1,15 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "127.0.0.1",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "vpp",
+            "database": "vpp_dbase",
+            "username": "vpp",
+            "password": "dadavpp",
+            "connectionTimeout": 30
+        }
+    ]
+}
