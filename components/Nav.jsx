@@ -97,14 +97,72 @@ const Nav = () => {
             >
               Download
             </Link>
-          
+{/*           
             <Link
               href="/photo"
               className="text-white font-grotesque text-lg tracking-widest"
             >
-              Photo Gallery
-           
+              Photos
             </Link>
+            <Link
+              href="/videos"
+              className="text-white font-grotesque text-lg tracking-widest"
+            >
+              Videos
+           
+            </Link> */}
+
+            <div className="relative inline-block text-left">
+              {/* The main link that toggles the dropdown */}
+              <button
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="text-white font-grotesque text-lg tracking-widest flex items-center"
+              >
+                Gallery
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className={`w-5 h-5 ml-2 transition-transform duration-200 ${
+                    dropdownOpen ? "rotate-180" : "rotate-0"
+                  }`}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </button>
+
+              {/* Dropdown menu */}
+              {dropdownOpen && (
+                <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+                  <div
+                    className="py-1"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="options-menu"
+                  >
+                    <Link
+                      href="/video"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" >
+                      Videos
+                    </Link>
+                 
+                    <Link
+                      href="/photo"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+                      Photos
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            
             <Link
               href="/contact"
               className="text-white font-grotesque text-lg tracking-widest" >
@@ -121,7 +179,17 @@ const Nav = () => {
               className="text-white font-grotesque text-lg tracking-widest" >
               Schemes
             </Link>
-</div>
+
+            <Link
+              href="/contactus"
+              className="text-white font-grotesque text-lg tracking-widest"
+            >
+              Contact Us
+              </Link> 
+
+
+
+        </div>
           <Link
             href="/login"
             className="text-white font-grotesque text-lg tracking-widest border border-solid w-24 h-9 text-center"
@@ -211,9 +279,65 @@ const Nav = () => {
                 Home
               </Link>
 
-              <Link href="/photo" className="text-white self-center">
+              {/* <Link href="/photo" className="text-white self-center">
                 Photo Gallery
+              </Link> */}
+
+               <Link href="/download" className="text-white self-center">
+                Download
               </Link>
+
+              <div className="relative inline-block mx-auto">
+                {/* The main link that toggles the dropdown */}
+                <button
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  className="text-white font-grotesque text-lg tracking-widest flex items-center"
+                >
+                  Gallery
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className={`w-5 h-5 ml-2 transition-transform duration-200 ${
+                      dropdownOpen ? "rotate-180" : "rotate-0"
+                    }`}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                </button>
+
+                {/* Dropdown menu */}
+                {dropdownOpen && (
+                  <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+                    <div
+                      className="py-1"
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="options-menu"
+                    >
+                      <Link
+                        href="/video"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      >
+                        Videos
+                      </Link>
+                      <Link
+                        href="/photo"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      >
+                        Photos
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+              
 
               <Link href="/contact" className="text-white self-center">
                 Join
@@ -222,14 +346,15 @@ const Nav = () => {
               <Link href="/infogram" className="text-white self-center">
               Infogram
               </Link>
-
-              <Link href="/download" className="text-white self-center">
-                Download
-              </Link>
-             
+                        
               <Link
                 href="/scheme"  className="text-white self-center">
                 Schemes
+              </Link>
+              
+              <Link
+                href="/contactus"  className="text-white self-center">
+                Contact Us
               </Link>
 
               <Link
