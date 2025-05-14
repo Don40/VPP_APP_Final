@@ -1,8 +1,9 @@
 // pages/index.js
 "use client";
 import AboutUs from '@/components/AboutUs';
-import GiveSection from '@/components/GiveSection';
-import Hero from '@/components/Hero';
+import Videohome from '@/components/Videohome';
+import KhadcSelector from "@/components/KhadcSelector";
+import JhadcSelector from "@/components/JhadcSelector";
 import MyMap from '@/components/MyMap';
 import Nav from '@/components/Nav';
 import NotificationSection from '@/components/NotificationSection';
@@ -13,6 +14,9 @@ import Banner from '@/components/Banner';
 import JoinLink from '@/components/JoinLink';
 import SecondaryHero from '@/components/SecondaryHero';
 import AudioPlayer from '@/components/AudioPlayer';
+import MdcVids from '@/components/MdcVids';
+import Photohome from '@/components/Photohome';
+import UpNav from '@/components/UpNav'; // Import NewNav
 
 const Home = () => {
   const markerPosition = [25.589413663131815, 91.87529363647245];
@@ -25,10 +29,11 @@ const Home = () => {
         textColor="text-white font-playfair"
         icon={<FaExclamationCircle />}
       />
-      <Nav />
+     <UpNav />
+        <Nav />
 
-      <SecondaryHero
-        bgImage="/images/bg-image.webp"
+          <SecondaryHero
+        bgImage="/images/vpplogo.webp"
         text="MESSAGE FROM THE VOICE OF THE PEOPLE PARTY!"
         paragraph={`&nbsp;&nbsp;&nbsp;&nbsp;Our aim is to bring a real and complete change in the governance of the state with a strong, clean 
         and decisive leadership and also an all round and inclusive development. <br>
@@ -41,9 +46,23 @@ const Home = () => {
       />
       
       <AboutUs />
+        <MdcVids />
+         <KhadcSelector />
+            <JhadcSelector />
+             <Photohome />
+               <Videohome />
         {/* Center Audio Player */}
-        <div className="flex justify-center items-center py-12">
-        <AudioPlayer src="/audio-file.mp4" title="AUDIO" />
+        <div className="bg-gradient-to-b from-blue-50 to-blue-100 py-1">
+        <div className="text-center flex justify-center items-center p-0">
+        <AudioPlayer 
+      src="/audio-file.mp4" 
+     title={
+    <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold ">
+      Audio Message from The VPP President
+    </span>
+  } 
+/>
+      </div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
-      const { firstName, lastName, constituency, village, contact } = req.body;
+      const { firstName, lastName, constituency, village, contact,rate } = req.body;
 
       const newContact = await prisma.contact.create({
         data: {
@@ -15,6 +15,7 @@ export default async function handler(req, res) {
           constituency,
           village,
           contact,
+          rate,
         },
       });
 

@@ -44,6 +44,7 @@ const Page = () => {
       id: 9,
       videoUrl: "https://www.youtube.com/embed/QREswqg8cHQ?si=prOgmFYwSO1RGrs6",
     },
+    
     // Add more videos here
   ];
 
@@ -88,11 +89,13 @@ const Page = () => {
   return (
     <>
       <Nav />
-      <div>
-        <h1 className="text-center text-3xl font-bold mb-4 font-playfair mt-8 text-white">
-          Video Gallery
-        </h1>
-        <VideoGallery videos={videosWithDetails} /> {/* Pass videos with details */}
+      <div className="bg-gradient-to-b from-blue-50 to-blue-100 py-10">
+          <div>
+          <h1 className="text-center text-3xl font-bold mb-4 font-playfair mt-1 text-blue-800">
+            Video Gallery
+          </h1>
+          <VideoGallery videos={videosWithDetails} /> {/* Pass videos with details */}
+          </div>
       </div>
     </>
   );

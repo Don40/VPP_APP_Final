@@ -49,7 +49,8 @@ const AboutUs = () => {
           </p> */}
         </div>
       ) : (
-        `Our mission is to bring a real and complete change in the governance of the state with a strong, clean, and decisive leadership...`
+        `The Party shall strive to protect the interests of the indigenous tribal communities while at the same 
+           time shall work for the interests of the members of the other communities permanently residing in Meghalaya...`
       )}
     </p>
     <button
@@ -205,7 +206,7 @@ has the following vision for the state:
               {
                 name: "SHEMBOR RYNJAH",
                 role: "JOINT SECRETARY",
-                image: "https://via.placeholder.com/150",
+                image: "/images/Shem.webp", alt: "Shem",
               },
               {
                 name: "GROSPER RYNTATHIANG",
@@ -217,6 +218,23 @@ has the following vision for the state:
                 role: "FINANCE SECRETARY",
                 image: "/images/Danny.webp", alt: "Danny",
               },
+              {
+                name: "PHILETA SYIEM",
+                role: "PRESIDENT WOMEN'S WING",
+                image: "/images/PHILETA.webp", alt: "PHILETA",
+              },
+               {
+                name: "MARBUD DKHAR",
+                role: "PRESIDENT YOUTH WING",
+                image: "/images/MARBUD.webp", alt: "MARBUD",
+              },
+              {
+                name: "NATHANIEL MAWRIE",
+                role: "SECRETARY YOUTH WING",
+                image: "/images/NATHAN.webp", alt: "NATHAN",
+              },
+           
+            
             ].map((member, index) => (
               <div
                 key={index}

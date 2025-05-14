@@ -5,8 +5,10 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from "react
 const Footer = () => {
   return (
     <>
+   <div className="bg-gradient-to-b from-blue-50 to-blue-80  p-1 ">
+
       {/* Social Media Icons (centered on all screen sizes) */}
-      <div className="flex items-center justify-center space-x-6 mb-6 mt-6">
+        <div className="flex items-center justify-center space-x-6 mb-6 mt-6">
   <Link
     href="https://facebook.com"
     target="_blank"
@@ -53,19 +55,24 @@ const Footer = () => {
   >
     <FaYoutube className="h-6 w-6 text-[#FF0000]" /> {/* YouTube red */}
   </Link>
-</div>
+         </div>
+  </div>
+  
 
-
-      {/* Footer */}
-      <footer className="bg-navbarBgColor text-white py-8 px-4">
-        <div className="container mx-auto text-center">
+  
+ {/* Footer */}
+    <div className="bg-gradient-to-b from-blue-50 to-blue-100  py-1 ">
+     
+      <footer className="bg-navbarBgColor text-white py-1 px-4">
           {/* Copyright Text */}
-          <div className="font-montserrat text-sm">
+          <div className="text-center font-montserrat text-sm px-4">
             <p>&copy; 2024 THE VOICE OF THE PEOPLE PARTY. <br />All rights reserved.</p>
           </div>
-        </div>
-      </footer>
+         
+        </footer> 
+    </div>
     </>
+    
   );
 };
 
